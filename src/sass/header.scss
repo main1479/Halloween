@@ -1,0 +1,285 @@
+.container.flex{
+    display: flex;
+
+    @media only screen and (max-width:$laptop-land){
+        flex-wrap: wrap;
+    }
+
+    .col-md-7{
+        flex: 0 0 60%;
+        height: 100vh;
+        @media only screen and (max-width:$laptop-land){
+            flex: 0 0 100%;
+        }
+        @media only screen and (max-width:$mbl-land){
+            height: 60vh;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @media only screen and (max-width:$laptop-land){
+                height: 100vh;
+            }
+            @media only screen and (max-width:$mbl-land){
+                height: 60vh;
+            }
+        }
+    }
+    .col-md-5{
+        flex: 0 0 40%;
+        @media only screen and (max-width:$laptop-land){
+            flex: 0 0 100%;
+        }
+
+        .content-area{
+            position: relative;
+            z-index: 2;
+
+            @media only screen and (max-width:$laptop-land){
+                padding-top: 100px;
+                padding-left: 20px;
+                // text-align: center;
+            }
+
+            .content{
+                // width: 90%;
+                margin: 0 auto;
+                position: relative;
+                z-index: 2;
+                
+
+                h2.heading{
+                    font-size: 30pt;
+                    color: $text;
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    text-align: center;
+                    position: relative;
+                    @media only screen and (max-width:$laptop-land){
+                        font-size: 22pt;
+                    }
+                    &.indicator{
+                        position: relative;
+                        text-align: left;
+
+                        @media only screen and (max-width:$laptop-land){
+                            // text-align: center;
+                            width: 90%;
+                            margin: 0 auto; 
+                            padding-left: 3rem;
+                        }
+
+                        img{
+                            position: absolute;
+                            top: 0;
+                            left: -70px;
+                            width: 50px;
+                            height: 50px;
+                            @media only screen and (max-width:$laptop-land){
+                                left: -50px;
+                            }
+                        }
+                    }
+
+                    &.primary{
+                        font-size: 40pt;
+                        transform: translateX(-50px);
+
+                        @media only screen and (max-width:$laptop-land){
+                            transform: translateX(0);
+                            width: 80%;
+                            margin: 0 auto;
+                            font-size: 4rem;
+                        }
+                    }
+
+                    img{
+                        position: absolute;
+                        top: 0%;
+                        left: 0%;
+                        height: 100%;
+                        // width: 100%;
+                        // object-fit: contain;
+                        transform: scale(1.4);
+                    }
+                }
+
+                h1.heading{
+                    font-size: 40pt;
+                    line-height: 1.2;
+                    color: $color-primary;
+                    position: relative;
+                    text-align: center;
+
+                    @media only screen and (max-width:$laptop-land){
+                        font-size: 30pt;
+                    }
+                    // background: url(../img/texth1-bg.png);
+                    // background-repeat: no-repeat;
+                    // background-size: cover;
+                    span{
+                        display: block;
+                        color: $text;
+                        font-size: 30pt;
+                    }
+
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: -10%;
+                        height: 100%;
+                        object-fit: contain;
+                        transform: scale(1.4);
+                    }
+                }
+
+                .p__text{
+                    font-size: 20pt;
+                    color: #F7F6F5;
+                    font-family: $rf;
+                    @media only screen and (max-width:$laptop-land){
+                        font-size: 18pt;
+                    }
+                    span{
+                        color: $color-primary;
+                    }
+
+                    &.mb-lg{
+                        @media only screen and (max-width:$laptop-land){
+                            margin: 5rem 0;
+                        }
+                    }
+                }
+
+                ul.made-of-list{
+                    margin-bottom: 5rem;
+                    @media only screen and (max-width:$laptop-land){
+                        margin-bottom: 10rem !important;
+                        margin-left: 30px;
+                    }
+                    li{
+                        color: #F7F6F5;
+                        font-size: 20pt;
+                        font-family: $rf;
+                        position: relative;
+                        &::after{
+                            content: "\2022"; 
+                            color: $text; 
+                            font-weight: bold; 
+                            display: inline-block;
+                            font-size: 20pt;
+                            width: 15px; 
+                            margin-left: -1em; 
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                }
+
+                .form{
+                    @media only screen and (max-width:$laptop-land){
+                        text-align: left;
+                    }
+                    width: 90%;
+                    @media only screen and (max-width:$laptop-land){
+                        margin: 0 auto;
+                    }
+                    label{
+                        color: #F7F6F5;
+                        font-size: 20pt;
+                        font-family: $rf;
+                        margin-left: 15px;
+                    }
+
+                    input{
+                        display: block;
+                        font-size: 20pt;
+                        padding: 10px 15px;
+                        color: $color-primary;
+                        font-family: $rf;
+                        border: none;
+                        background: rgba(204, 58, 0, 0.26);
+                        border-bottom: 2px solid #CC3A00;
+                        margin-bottom: 20px;
+                        width: 100%;
+                    }
+
+                    .date__grid{
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                        grid-gap: 10px;
+                        margin-bottom: 20px;
+                        overflow-y: visible;
+                        @media only screen and (max-width:$laptop-land){
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        }
+                        .day{
+                            overflow-y: visible;
+                        }
+                    }
+
+                    p.input-info{
+                        font-size: 12pt;
+                        font-family: $open-sans;
+                        color: #fff;
+                        margin-bottom: 30px;
+                    }
+                }
+
+
+
+
+
+
+
+            }
+            img.bois{
+                position: absolute;
+                top: 0;
+                right:100%;
+                height: 100vh;
+                object-fit: contain;
+                transform: translateX(50%);
+                z-index: 1;
+
+                @media only screen and (max-width:$laptop-land){
+                    display: none;
+                }
+            }
+
+            img.bois-mobile{
+                display: none;
+                @media only screen and (max-width:$laptop-land){
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+
+            .footer__text{
+                position: relative;
+                margin-right: 80px;
+                font-size: 12pt;
+                font-family: $open-sans;
+                text-transform: uppercase;
+                img{
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    top: 0;
+                    right: -70px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+
+
